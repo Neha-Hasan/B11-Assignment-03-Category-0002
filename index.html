@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +7,85 @@
     <!-- daisyUI + Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <style>
+        .sora-text-font {
+            font-family: "Sora", sans-serif;
+        }
+    </style>
+     <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                // 'bike-primary':'#E76F51',
+                // 'bike-primary-bg':'rgba(231, 111, 81, 0.1)',
+              }
+            }
+          }
+        }
+      </script>
 
 </head>
-<body>
+<body class="sora-text-font">
     <!-- Header section -->
-     <Header></Header>
+    <header class="md:container mx-auto">
+        <nav>
+             <!-- Header Section -->
+    <nav class= "bg-gray-50 shadow-md p-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <img src="c2-assets/logo-header.png" alt="Logo" > 
+        </div>
+        
+        <div class="hidden md:flex space-x-6">
+            <a  class="text-gray-700 hover:text-green-500">Product</a>
+            <a  class="text-gray-700 hover:text-green-500">Services</a>
+            <a  class="text-gray-700 hover:text-green-500">Contact Us</a>
+        </div>
+        
+        <div class="hidden md:flex space-x-4">
+            <button class="btn btn-outline btn-success h-[45px] w-[117px]">Login</button>
+            <button class="btn btn-success ">Register</button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden flex items-center">
+            <button class="btn btn-ghost" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile  Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md p-4">
+        <a  class="block text-gray-700 hover:text-green-500 p-2">Product</a>
+        <a  class="block text-gray-700 hover:text-green-500 p-2">Services</a>
+        <a  class="block text-gray-700 hover:text-green-500 p-2">Contact Us</a>
+        <button class="btn btn-outline btn-success w-full my-2">Login</button>
+        <button class="btn btn-success w-full">Register</button>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="text-center py-16 px-4 bg-gray-50">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800">
+            Freshness <span class="text-green-600">You Can Count</span> On, Prices You’ll Love!
+        </h1>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Shop your daily essentials at unbeatable prices. From fresh produce to pantry staples, we’ve got you covered every day!
+        </p>
+        
+        <div class="mt-6 flex justify-center">
+            <img src="c2-assets/hero-vegetables.png" alt="Groceries" class="w-full max-w-md md:max-w-lg">
+        </div>
+    </section>
+        </nav>
+     </Header>
      <!-- main section -->
       <main></main>
       <!-- Footer section -->
